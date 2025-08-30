@@ -197,7 +197,7 @@ const Navbar = () => {
   </h1>
 
   {/* Input and Button */}
-  <div className="link flex flex-col sm:flex-row justify-between items-center gap-3 w-full">
+  <div className="link flex flex-col sm:flex-row justify-between items-center gap-3 w-screen p-5">
     <input
       type="tel"
       placeholder="Enter your phone number"
@@ -209,7 +209,7 @@ const Navbar = () => {
   </div>
 
   {/* App Store and Play Store Buttons */}
-  <div className="app flex flex-col sm:flex-row justify-evenly gap-5 py-3 mt-3 cursor-pointer">
+  <div className="app flex justify-center     gap-5 py-3  cursor-pointer">
     <Image
       width={135}
       height={135}
