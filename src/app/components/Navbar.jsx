@@ -48,8 +48,8 @@ const Navbar = () => {
       <nav aria-label="breadcrumb"npm ru  className="nav sticky top-0 bg-white/30 backdrop-blur-sm w-full flex items-center justify-between p-5  shadow-md z-50">
         {/* Logo */}
         <div className="logo ">
-          <Link href="/Logo.png" className="flex items-center gap-2">
-            <Image width={118} height={110} src="/Mothers Meal-PNG.png" alt="Logo" />
+          <Link href="/" className="flex items-center gap-2">
+            <Image width={118} height={110} src="/Logo.png" alt="Logo" />
           </Link>
         </div>
 
