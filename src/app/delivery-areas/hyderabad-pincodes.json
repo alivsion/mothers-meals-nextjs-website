@@ -1,0 +1,364 @@
+{
+  "500001": [
+    "Gandhi Bhawan",
+    "Hindi Bhawan",
+    "Hyderabad.",
+    "Moazzampura",
+    "Seetharampet",
+    "State Bank of hyderabad"
+  ],
+  "500002": [
+    "Hyderabad Jubilee",                          
+    "Moghalpura",
+    "Tagarikanaka"
+  ],
+  "500003": [
+    "Begumpet Policelines",
+    "Kingsway",
+    "Mg Road",
+    "Picket",
+    "Secunderabad"
+  ],
+  "500004": [
+    "A.Gs office",
+    "Anandnagar",
+    "Bazarghat",
+    "Khairatabad",
+    "Padmavathi Nagar",
+    "Parishram Bhawan",
+    "Shyam Nagar",
+    "Vidhan Sabha"
+  ],
+  "500005": [
+    "Balapur",
+    "Crp Camp",
+    "Keshogiri",
+    "Mamidipalli",
+    "Pahadishareef"
+  ],
+  "500006": [
+    "Dhoolpet",
+    "Karwan Sahu",
+    "Mangalhat"
+  ],
+  "500007": [
+    "Administrative Buildings",
+    "Iict",
+    "Jama I osmania",
+    "Ngri",
+    "Tarnaka"
+  ],
+  "500008": [
+    "Dargah Hussain shahwali",
+    "Golconda",
+    "Hyder Shah kote",
+    "Kakatiya Nagar",
+    "Lunger House",
+    "Nanakramguda",
+    "Sakkubai Nagar",
+    "Toli Chowki"
+  ],
+  "500012": [
+    "Afzalgunj",
+    "Begumbazar",
+    "Osmania General hospital"
+  ],
+  "500013": [
+    "Amberpet",
+    "Central Police lines",
+    "Hyderabad Public school",
+    "Seminary",
+    "Srinivasapuram",
+    "Zindatelismath"
+  ],
+  "500015": [
+    "Aliabad",
+    "Anantaram",
+    "Atvelli",
+    "Dabirpur",
+    "Gajularamaram",
+    "Girmapur",
+    "Gowdavalli",
+    "Jaggamguda",
+    "Jeedimetla",
+    "Kolthur",
+    "Kushaiguda",
+    "Kutbullapur",
+    "Lalgadi Malakpet",
+    "Mudchintanapalli",
+    "Nutankal",
+    "Pedalaxmapur",
+    "Pragatinagar",
+    "Ravalkol",
+    "Suraram",
+    "Thumkunta"
+  ],
+  "500016": [
+    "Begumpet",
+    "Hyd Airport i",
+    "Hyd Airport ii",
+    "Prakashamnagar",
+    "Rajbolaram"
+  ],
+  "500017": [
+    "Lallaguda",
+    "Lallapet",
+    "Sainagar"
+  ],
+  "500018": [
+    "Bharat Nagar colony",
+    "Erragadda",
+    "Fathenagar Colony",
+    "Moosapet",
+    "Sanath Nagar colony",
+    "Sanathnagar I e",
+    "Swarajyanagar"
+  ],
+  "500020": [
+    "Ashoknagar",
+    "Golconda Chowrastha",
+    "Musheerabad Dso",
+    "Musheerabad Ndso",
+    "Zamistanpur"
+  ],
+  "500022": [
+    "Central Secretariat"
+  ],
+  "500023": [
+    "Reinbazar",
+    "Yakutpura"
+  ],
+  "500024": [
+    "Chanchalguda",
+    "Darushifa",
+    "Sahifa"
+  ],
+  "500025": [
+    "Himmatnagar",
+    "Padmaraonagar"
+  ],
+  "500026": [
+    "Nehrunagar"
+  ],
+  "500027": [
+    "Barkatpura",
+    "Nimboliadda",
+    "Stn Kachiguda"
+  ],
+  "500028": [
+    "Dattatreya Colony",
+    "Humayunnagar",
+    "Murad Nagar",
+    "Shantinagar"
+  ],
+  "500029": [
+    "Gagan Mahal",
+    "Himayathnagar",
+    "Narayanguda",
+    "Old Mla quarters",
+    "Ramakrishna Mutt"
+  ],
+  "500030": [
+    "A.G.college",
+    "Aperl",
+    "Kismathpur",
+    "Rajendranagar"
+  ],
+  "500031": [
+    "Ibrahim Bagh lines"
+  ],
+  "500033": [
+    "Jubilee Hills",
+    "South Banjara hills"
+  ],
+  "500034": [
+    "Banjara Hills"
+  ],
+  "500035": [
+    "Huda Residential complex",
+    "Ramakrishanapuram",
+    "Saroornagar"
+  ],
+  "500036": [
+    "Malakpet Colony",
+    "Old Malakpet",
+    "Osmannagar",
+    "Sripuram Colony"
+  ],
+  "500038": [
+    "Sanjeev Reddy nagar",
+    "Vengal Rao nagar"
+  ],
+  "500039": [
+    "Boduppal",
+    "Peerzadiguda",
+    "Survey Of india",
+    "Uppal"
+  ],
+  "500040": [
+    "Aphb Colony moulali",
+    "Ie Moulali",
+    "Moulali"
+  ],
+  "500041": [
+    "Raj Bhawan"
+  ],
+  "500044": [
+    "Ambernagar",
+    "Andhra Mahila sabha",
+    "Nallakunta",
+    "New Nallakunta",
+    "Vidyanagar"
+  ],
+  "500045": [
+    "A.Gs. staff quarters",
+    "Rahmath Nagar",
+    "Yousufguda"
+  ],
+  "500048": [
+    "Attapur",
+    "Hyderguda"
+  ],
+  "500051": [
+    "Hindustan Cables ltd"
+  ],
+  "500052": [
+    "Hasannagar",
+    "Shivarampalli",
+    "Svpnpa"
+  ],
+  "500053": [
+    "Falaknuma",
+    "Uppuguda"
+  ],
+  "500057": [
+    "Vijay Nagar colony"
+  ],
+  "500058": [
+    "Badangpet",
+    "Kanchanbagh"
+  ],
+  "500059": [
+    "Saidabad",
+    "Saidabad Colony",
+    "Santoshnagar Colony"
+  ],
+  "500060": [
+    "Dilsukhnagar Colony",
+    "New Maruthi nagar",
+    "P & t colony"
+  ],
+  "500061": [
+    "Sitaphalmandi"
+  ],
+  "500062": [
+    "Dr As rao nagar",
+    "Ecil",
+    "Hanumanpet",
+    "Khapra",
+    "Kyasaram",
+    "Napier Lines"
+  ],
+  "500063": [
+    "Lic Division",
+    "New Mla quarters"
+  ],
+  "500064": [
+    "Bahadurpura",
+    "Chandulalbaradari",
+    "Hussainialam",
+    "Kishanbagh",
+    "Tadbun"
+  ],
+  "500065": [
+    "Fatehdarwaza",
+    "Quazipura",
+    "Shahalibanda",
+    "Sultanshahi"
+  ],
+  "500066": [
+    "High Court"
+  ],
+  "500067": [
+    "Kulsumpura"
+  ],
+  "500068": [
+    "Gsi(sr) Bandlaguda",
+    "Mansoorabad"
+  ],
+  "500069": [
+    "R.C.imarat"
+  ],
+  "500070": [
+    "Vaidehinagar",
+    "Vanastalipuram"
+  ],
+  "500071": [
+    "Rail Nilayam"
+  ],
+  "500073": [
+    "Srinagar Colony"
+  ],
+  "500074": [
+    "L B nagar",
+    "Rangareddy Dt courts"
+  ],
+  "500076": [
+    "I.E.nacharam",
+    "Mallapur",
+    "Snehapuri Colony"
+  ],
+  "500077": [
+    "Kattedan Ie"
+  ],
+  "500079": [
+    "Jillellaguda",
+    "Karmanghat",
+    "Vaishalinagar"
+  ],
+  "500080": [
+    "Bholakpur",
+    "Gandhinagar",
+    "Turkapalliyadaram"
+  ],
+  "500081": [
+    "Cyberabad",
+    "Madhapur"
+  ],
+  "500082": [
+    "I.M.colony",
+    "Somajiguda"
+  ],
+  "500085": [
+    "Jntu Kukat pally"
+  ],
+  "500095": [
+    "Putlibowli",
+    "Ramkoti",
+    "State Bank of india"
+  ],
+  "501101": [
+    "Vikarabad"
+  ],
+  "501201": [
+    "Anantagiri"
+  ],
+  "501301": [
+    "Ankireddipalli",
+    "Ankushapur",
+    "Annajiguda",
+    "Bogaram",
+    "Cherial",
+    "Cherlapalli",
+    "Ghatkesar",
+    "Katchvanisingaram",
+    "Keesara",
+    "Keesaragutta",
+    "Korremal",
+    "Pratapsingaram",
+    "Rampallidiara",
+    "Rompalli",
+    "Thimmaipalli",
+    "Yadgarpalli"
+  ]
+}
