@@ -1,11 +1,20 @@
 {
-  "name": "homefoodi",
+  "name": "mothermeals",
   "version": "0.1.0",
   "private": true,
 "scripts": {
   "dev": "next dev",
   "build": "next build",
-  "deploy": "next build && gh-pages -d out"
+  "deploy": "next build && gh-pages -d out -b gh-pages -r https://github.com/ORG-NAME/REPO-NAME.git",
+
+
+  "homepage": "https://github.com/alivsion/mothers-meals-nextjs-website.git",
+
+"repository": {
+  "type": "git",
+  "url": "https://github.com/alivsion/mothers-meals-nextjs-website.git"
+}
+
 }
 
 ,
