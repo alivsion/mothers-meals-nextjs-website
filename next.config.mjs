@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// next.config.js
+const isProd = process.env.NODE_ENV === 'production';
 
-export default nextConfig;
+const nextConfig = {
+  output: 'export',
+  basePath: isProd ? '/mothers-meals-nextjs-website' : '',
+  assetPrefix: isProd ? '/mothers-meals-nextjs-website/' : '',
+};
+
+ export default  nextConfig;
