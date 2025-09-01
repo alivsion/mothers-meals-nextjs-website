@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "next build && gh-pages -d out -b gh-pages -r https://github.com/alivsion/mothers-meals-nextjs-website"
-  },
+"deploy": "next build && echo > out/.nojekyll && gh-pages -d out -b gh-pages -r https://github.com/alivsion/mothers-meals-nextjs-website"  },
   "homepage": "https://alivsion.github.io/mothers-meals-nextjs-website",
   "repository": {
     "type": "git",
