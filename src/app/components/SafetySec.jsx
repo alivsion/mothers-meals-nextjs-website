@@ -7,7 +7,7 @@ const SafetySec = () => {
     {
       heading: "Sanitization Standards",
       para: "Riders follow strict hygiene with masks, gloves, sanitizers & daily checks.",
-      img: "/mothers-meals-nextjs-website/rider-guideline/SANITIZATION-STANDARDS.webp",
+      img: "/rider-guideline/SANITIZATION-STANDARDS.webp",
     },
     // {
     //   heading: "Contactless Delivery",
@@ -17,7 +17,7 @@ const SafetySec = () => {
     {
       heading: "Rider Supervision",
       para: "Daily health checks ensure riders wear masks & follow distancing.",
-      img: "/mothers-meals-nextjs-website/rider-guideline/RIDER-SUPERVISION.webp",
+      img: "/rider-guideline/RIDER-SUPERVISION.webp",
     },
   ];
   
@@ -26,7 +26,7 @@ const SafetySec = () => {
     {
       heading: "Cleaning & Sanitization",
       para: "Chefs wash hands regularly and sanitize kitchens twice a day.",
-      img: "/mothers-meals-nextjs-website/chief-guideline/CLEANING-SANITIZATION.webp",
+      img: "/chief-guideline/CLEANING-SANITIZATION.webp",
     },
     // {
     //   heading: "Mask & Distancing",
@@ -36,7 +36,7 @@ const SafetySec = () => {
     {
       heading: "Healthy & Fresh",
       para: "Meals are freshly cooked using only top-quality ingredients.",
-      img: "/mothers-meals-nextjs-website/chief-guideline/HEATHY-FRESHLY-PREPARED.webp",
+      img: "/chief-guideline/HEATHY-FRESHLY-PREPARED.webp",
     },
   ];
   
@@ -47,7 +47,7 @@ const SafetySec = () => {
           <Image
             width={80}
             height={80}
-            src="/mothers-meals-nextjs-website/safety-badge/Badge1.webp"
+            src="/safety-badge/Badge1.webp"
             alt=""
             className="w-16 h-16 lg:w-24 lg:h-24"
           />
@@ -57,7 +57,7 @@ const SafetySec = () => {
           <Image
             width={80}
             height={80}
-            src="/mothers-meals-nextjs-website/safety-badge/Badge2.webp"
+            src="/safety-badge/Badge2.webp"
             alt=""
             className="w-16 h-16 lg:w-24 lg:h-24"
           />

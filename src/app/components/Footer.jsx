@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo & Description */}
         <div>
-          <Image width={118} height={110} className="w-30 mb-4" src="/mothers-meals-nextjs-website/Logo.png" alt="Logo" />
+          <Image width={118} height={110} className="w-30 mb-4" src="/Logo.png" alt="Logo" />
           <p className="text-sm leading-relaxed">
             Order delicious meals from the comfort of your home with Foodie Haven. 
             Enjoy convenient online ordering and on-time home food delivery.

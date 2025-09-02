@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content="/Logo.png" />
-        <link rel="icon" href="/mothers-meals-nextjs-website/favicon/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon" />
         {/* Structured Data */}
         <script
           type="application/ld+json"

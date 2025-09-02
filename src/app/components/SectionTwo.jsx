@@ -18,7 +18,7 @@ return (
                     {/* Badge 1 */}
                     <div className="badge flex items-center text-center gap-1">
                         <Image
-                            src="/mothers-meals-nextjs-website/trust-badge/Authentic.webp"
+                            src="/trust-badge/Authentic.webp"
                             alt="Quality Badge"
                             className="w-18 mb-2"
                             width={50}
@@ -32,7 +32,7 @@ return (
                     {/* Badge 2 */}
                     <div className="badge flex items-center text-center gap-1">
                         <Image
-                            src="/mothers-meals-nextjs-website/trust-badge/Fresh.webp"
+                            src="/trust-badge/Fresh.webp"
                             alt="Fresh Badge"
                             className="w-18 mb-2"
                             width={50}
@@ -46,7 +46,7 @@ return (
                     {/* Badge 3 */}
                     <div className="badge flex items-center text-center gap-1">
                         <Image
-                            src="/mothers-meals-nextjs-website/trust-badge/Hygiene.webp"
+                            src="/trust-badge/Hygiene.webp"
                             alt="Delivery Badge"
                             className="w-18 mb-2"
                             width={50}
@@ -60,7 +60,7 @@ return (
                     {/* Badge 4 */}
                     <div className="badge flex items-center text-center gap-1">
                         <Image
-                            src="/mothers-meals-nextjs-website/trust-badge/Highest-Rating.webp"
+                            src="/trust-badge/Highest-Rating.webp"
                             alt="Home Chefs Badge"
                             className="w-18 mb-2"
                             width={50}
@@ -74,7 +74,7 @@ return (
             </div>
             <div className="Right">
                 <Image
-                    src="/mothers-meals-nextjs-website/app-screens.webp"
+                    src="/app-screens.webp"
                     alt="App Screens"
                     width={600}
                     height={600}

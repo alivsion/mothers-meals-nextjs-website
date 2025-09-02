@@ -35,7 +35,7 @@ const HeroSec = () => {
             <Image
             width={192}
               height={60}
-              src="/mothers-meals-nextjs-website/playstore.webp"
+              src="/playstore.webp"
               alt="Download on Play Store"
               className="relative w-40 sm:w-48 md:w-40 h-auto shadow-lg rounded-lg"
             />
@@ -52,7 +52,7 @@ const HeroSec = () => {
             <Image
               width={192}
               height={60}
-              src="/mothers-meals-nextjs-website/appstore.webp"
+              src="/appstore.webp"
               alt="Download on App Store"
               className="relative w-40 sm:w-48 md:w-40 h-auto shadow-lg rounded-lg"
             />
