@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next build",
-"deploy": "node -e \"const { execSync } = require('child_process'); const url = execSync('git config --get remote.origin.url').toString().trim(); const match = url.match(/[:/]([^/]+\\/[^/]+)\\.git$/); if(!match) throw new Error('Repo not found'); process.env.GITHUB_ACTIONS='true'; process.env.GITHUB_REPOSITORY=match[1]; require('child_process').execSync('next build && gh-pages -d out -b gh-pages --dotfiles', { stdio: 'inherit' });\""
+"deploy": "node -e \"const { execSync } = require('child_process'); const url = execSync('git config --get remote.origin.url').toString().trim(); const match = url.match(/[:/]([^/]+\\/[^/]+)\\.git$/); if(!match) throw new Error('Repo not found'); process.env.GITHUB_ACTIONS='true'; process.env.GITHUB_REPOSITORY=match[1]; execSync('next build && gh-pages -d out -b gh-pages --dotfiles -r ' + url, { stdio: 'inherit' });\""
   },
   "homepage": "https://alivsion.github.io/mothers-meals-nextjs-website",
   "repository": {
