@@ -1,11 +1,11 @@
-// next.config.mjs
-const repoName = "mothers-meals-nextjs-website";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  basePath: `/${repoName}`,
-  assetPrefix: `/${repoName}/`,
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  basePath: '/mothers-meals-nextjs-website',
+  assetPrefix: '/mothers-meals-nextjs-website/',
 };
 
-export default nextConfig;
+export default  nextConfig;
