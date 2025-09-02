@@ -1,10 +1,11 @@
-/** @type {import('next').NextConfig} */
+// next.config.mjs
 const repoName = "mothers-meals-nextjs-website";
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: process.env.NODE_ENV === "production" ? `/${repoName}` : "",
-  trailingSlash: true, // 🔑 important for GitHub Pages
+  basePath: `/${repoName}`,
+  assetPrefix: `/${repoName}/`,
 };
 
 export default nextConfig;
