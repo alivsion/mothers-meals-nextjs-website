@@ -1,6 +1,6 @@
 @import "tailwindcss";
  .heroSec{
-  background-image: url('/home-foodi-bg.webp');
+  background-image: url('/mothers-meals-nextjs-website/home-foodi-bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

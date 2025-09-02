@@ -7,17 +7,17 @@ const SafetySec = () => {
     {
       heading: "Sanitization Standards",
       para: "Riders follow strict hygiene with masks, gloves, sanitizers & daily checks.",
-      img: "/RiderGuideline/SANITIZATION-STANDARDS.webp",
+      img: "/mothers-meals-nextjs-website/rider-guideline/SANITIZATION-STANDARDS.webp",
     },
     // {
     //   heading: "Contactless Delivery",
     //   para: "Food is picked up and delivered with zero contact for safety.",
-    //   img: "/RiderGuideline/CONTACTLESS-DELIVERY.webp",
+    //   img: "/rider-guideline/CONTACTLESS-DELIVERY.webp",
     // },
     {
       heading: "Rider Supervision",
       para: "Daily health checks ensure riders wear masks & follow distancing.",
-      img: "/RiderGuideline/RIDER-SUPERVISION.webp",
+      img: "/mothers-meals-nextjs-website/rider-guideline/RIDER-SUPERVISION.webp",
     },
   ];
   
@@ -26,17 +26,17 @@ const SafetySec = () => {
     {
       heading: "Cleaning & Sanitization",
       para: "Chefs wash hands regularly and sanitize kitchens twice a day.",
-      img: "/ChiefGuideline/CLEANING-SANITIZATION.webp",
+      img: "/mothers-meals-nextjs-website/chief-guideline/CLEANING-SANITIZATION.webp",
     },
     // {
     //   heading: "Mask & Distancing",
     //   para: "Chefs wear masks and maintain safe social distancing.",
-    //   img: "/ChiefGuideline/MASK-SOCIAL-DISTANCING.webp",
+    //   img: "/chief-guideline/MASK-SOCIAL-DISTANCING.webp",
     // },
     {
       heading: "Healthy & Fresh",
       para: "Meals are freshly cooked using only top-quality ingredients.",
-      img: "/ChiefGuideline/HEATHY-FRESHLY-PREPARED.webp",
+      img: "/mothers-meals-nextjs-website/chief-guideline/HEATHY-FRESHLY-PREPARED.webp",
     },
   ];
   
@@ -47,7 +47,7 @@ const SafetySec = () => {
           <Image
             width={80}
             height={80}
-            src="/Safety Badge/Badge1.webp"
+            src="/mothers-meals-nextjs-website/safety-badge/Badge1.webp"
             alt=""
             className="w-16 h-16 lg:w-24 lg:h-24"
           />
@@ -57,14 +57,14 @@ const SafetySec = () => {
           <Image
             width={80}
             height={80}
-            src="/Safety Badge/Badge2.webp"
+            src="/mothers-meals-nextjs-website/safety-badge/Badge2.webp"
             alt=""
             className="w-16 h-16 lg:w-24 lg:h-24"
           />
         </div>
       </div>
       <div className="flex flex-col lg:flex-row justify-evenly   px-4 w-full   ">
-        <div className="RiderGuideline flex flex-col gap-6 lg:gap-10 p-4 lg:p-10">
+        <div className="rider-guideline flex flex-col gap-6 lg:gap-10 p-4 lg:p-10">
           <h1 className="text-xl lg:text-2xl mb-3 lg:mb-5 font-semibold">
             Riders Deliver Guidelines
           </h1>

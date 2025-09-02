@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 
 const HeroSec = () => {
@@ -31,8 +32,10 @@ const HeroSec = () => {
             className="relative group hover:scale-105 transition-transform duration-300"
           >
             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#ff3700] via-[#f0643e] to-[#ffa500] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-gradient-border"></div>
-            <img
-              src="/playstore.webp"
+            <Image
+            width={192}
+              height={60}
+              src="/mothers-meals-nextjs-website/playstore.webp"
               alt="Download on Play Store"
               className="relative w-40 sm:w-48 md:w-40 h-auto shadow-lg rounded-lg"
             />
@@ -46,8 +49,10 @@ const HeroSec = () => {
             className="relative group hover:scale-105 transition-transform duration-300"
           >
             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#ff3700] via-[#f0643e] to-[#ffa500] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-gradient-border"></div>
-            <img
-              src="/appstore.webp"
+            <Image
+              width={192}
+              height={60}
+              src="/mothers-meals-nextjs-website/appstore.webp"
               alt="Download on App Store"
               className="relative w-40 sm:w-48 md:w-40 h-auto shadow-lg rounded-lg"
             />

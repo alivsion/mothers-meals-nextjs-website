@@ -17,8 +17,8 @@ return (
                 <div className="Left flex flex-col gap-3 mt-5">
                     {/* Badge 1 */}
                     <div className="badge flex items-center text-center gap-1">
-                        <img
-                            src="/Trust Badge/Authentic.webp"
+                        <Image
+                            src="/mothers-meals-nextjs-website/trust-badge/Authentic.webp"
                             alt="Quality Badge"
                             className="w-18 mb-2"
                             width={50}
@@ -31,8 +31,8 @@ return (
 
                     {/* Badge 2 */}
                     <div className="badge flex items-center text-center gap-1">
-                        <img
-                            src="/Trust Badge/Fresh.webp"
+                        <Image
+                            src="/mothers-meals-nextjs-website/trust-badge/Fresh.webp"
                             alt="Fresh Badge"
                             className="w-18 mb-2"
                             width={50}
@@ -45,8 +45,8 @@ return (
 
                     {/* Badge 3 */}
                     <div className="badge flex items-center text-center gap-1">
-                        <img
-                            src="/Trust Badge/Hygiene.webp"
+                        <Image
+                            src="/mothers-meals-nextjs-website/trust-badge/Hygiene.webp"
                             alt="Delivery Badge"
                             className="w-18 mb-2"
                             width={50}
@@ -59,8 +59,8 @@ return (
 
                     {/* Badge 4 */}
                     <div className="badge flex items-center text-center gap-1">
-                        <img
-                            src="/Trust Badge/Highest-Rating.webp"
+                        <Image
+                            src="/mothers-meals-nextjs-website/trust-badge/Highest-Rating.webp"
                             alt="Home Chefs Badge"
                             className="w-18 mb-2"
                             width={50}
@@ -74,7 +74,7 @@ return (
             </div>
             <div className="Right">
                 <Image
-                    src="/app-screens.webp"
+                    src="/mothers-meals-nextjs-website/app-screens.webp"
                     alt="App Screens"
                     width={600}
                     height={600}

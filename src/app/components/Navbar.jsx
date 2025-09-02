@@ -45,11 +45,11 @@ const Navbar = () => {
 
   return (
     <>
-      <nav aria-label="breadcrumb"npm ru  className="nav sticky top-0 bg-white/30 backdrop-blur-sm w-full flex items-center justify-between p-5  shadow-md z-50">
+      <nav aria-label="breadcrumb" className="nav sticky top-0 bg-white/30 backdrop-blur-sm w-full flex items-center justify-between p-5  shadow-md z-50">
         {/* Logo */}
         <div className="logo ">
           <Link href="/" className="flex items-center gap-2">
-            <Image width={118} height={110} src="/Logo.png" alt="Logo" />
+            <Image width={118} height={110} src="/mothers-meals-nextjs-website/Logo.png" alt="Logo" />
           </Link>
         </div>
 
@@ -107,8 +107,8 @@ const Navbar = () => {
 
             <div className="app flex justify-evenly gap-5 py-3 mt-3 cursor-pointer">
          
-              <Image width={135} height={135} src="/appstore.webp" alt="App Store" />
-              <Image width={135} height={135} src="/playstore.webp" alt="Play Store" />
+              <Image width={135} height={135} src="/mothers-meals-nextjs-website/appstore.webp" alt="App Store" />
+              <Image width={135} height={135} src="/mothers-meals-nextjs-website/playstore.webp" alt="Play Store" />
             </div>
           </div>
         </div>
@@ -213,14 +213,14 @@ const Navbar = () => {
     <Image
       width={135}
       height={135}
-      src="/appstore.webp"
+      src="/mothers-meals-nextjs-website/appstore.webp"
       alt="App Store"
       className="w-32 sm:w-36"
     />
     <Image
       width={135}
       height={135}
-      src="/playstore.webp"
+      src="/mothers-meals-nextjs-website/playstore.webp"
       alt="Play Store"
       className="w-32 sm:w-36"
     />

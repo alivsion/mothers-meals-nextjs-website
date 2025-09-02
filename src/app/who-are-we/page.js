@@ -1,10 +1,11 @@
+import Image from "next/image";
 import React from "react";
 
 const WhoAreWe = () => {
   return (
     <div className="whoAreWePage">
       {/* Hero Section */}
-      <section className="heroSec mt-5 p-15 w-full rounded-xl overflow-hidden bg-cover bg-center text-white" style={{ backgroundImage: "url('/home-foodi-bg.webp')" }}>
+      <section className="heroSec mt-5 p-15 w-full rounded-xl overflow-hidden bg-cover bg-center text-white" style={{ backgroundImage: "url('/mothers-meals-nextjs-website/home-foodi-bg.webp')" }}>
         <div className="flex flex-col py-20">
           <h1 className="text-5xl font-bold mb-4 montserrat">
             Who Are <span className="text-[#E7154F]">We?</span>
@@ -26,10 +27,12 @@ const WhoAreWe = () => {
           </p>
         </div>
         <div>
-          <img
-            src="/Trust Badge/Authentic.webp"
+          <Image
+            src="/mothers-meals-nextjs-website/trust-badge/Authentic.webp"
             alt="Authentic Food"
             className="w-0   md:w-60 sm:w-40 rounded-lg"
+            width={200}
+            height={200}
           />
         </div>
       </section>
@@ -50,10 +53,12 @@ const WhoAreWe = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {/* Value 1 */}
           <div className="valueCard text-center">
-            <img
-              src="/Trust Badge/Fresh.webp"
+            <Image
+              src="/mothers-meals-nextjs-website/trust-badge/Fresh.webp"
               alt="Fresh Food"
               className="w-20 mx-auto mb-4"
+              width={80}
+              height={80}
             />
             <h3 className="text-xl font-semibold text-gray-800">
               Freshness
@@ -64,10 +69,12 @@ const WhoAreWe = () => {
           </div>
           {/* Value 2 */}
           <div className="valueCard text-center">
-            <img
-              src="/Trust Badge/Hygiene.webp"
+            <Image
+              src="/mothers-meals-nextjs-website/trust-badge/Hygiene.webp"
               alt="Hygiene"
               className="w-20 mx-auto mb-4"
+              width={80}
+              height={80}
             />
             <h3 className="text-xl font-semibold text-gray-800">
               Hygiene
@@ -78,10 +85,12 @@ const WhoAreWe = () => {
           </div>
           {/* Value 3 */}
           <div className="valueCard text-center">
-            <img
-              src="/Trust Badge/Highest-Rating.webp"
+            <Image
+              src="/mothers-meals-nextjs-website/trust-badge/Highest-Rating.webp"
               alt="Quality"
               className="w-20 mx-auto mb-4"
+              width={80}
+              height={80}
             />
             <h3 className="text-xl font-semibold text-gray-800">
               Quality
@@ -100,15 +109,19 @@ const WhoAreWe = () => {
     Download the Mother’s Meal App and enjoy fresh,<br /> home-cooked food delivered to your door.
   </p>
   <div className="flex justify-center gap-4">
-    <img
-      src="/appstore.webp"
+    <Image
+      src="/mothers-meals-nextjs-website/appstore.webp"
       alt="Download on App Store"
       className="w-40 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg rounded-lg"
+      width={160}
+      height={50}
     />
-    <img
-      src="/playstore.webp"
+    <Image
+      src="/mothers-meals-nextjs-website/playstore.webp"
       alt="Get it on Google Play"
       className="w-40 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg rounded-lg"
+      width={160}
+      height={50}
     />
   </div>
 </section>
