@@ -1,7 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 
-const Guideline = ({heading , para , img}) => {
+interface GuidelineProps {
+  heading: string;
+  para: string;
+  img: string;
+}
+
+const Guideline = ({heading , para , img}: GuidelineProps) => {
   return (
   
     <>
