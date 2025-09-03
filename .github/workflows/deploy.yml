@@ -1,12 +1,12 @@
-name: Build Next.js into docs folder
+name: Deploy Next.js to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main   # adjust if your default branch is different
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,5 +21,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build and commit docs
-        run: npm run deploy
+      - name: Build Next.js (export to docs)
+        run: npm run build
+        env:
+          GITHUB_ACTIONS: true
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Setup Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit docs folder
+        run: |
+          git add docs
+          git commit -m "Update docs folder [skip ci]" || echo "No changes to commit"
+          git push origin main
