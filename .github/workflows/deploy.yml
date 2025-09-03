@@ -24,11 +24,8 @@ jobs:
       - name: Build Next.js
         run: npm run build
 
-<<<<<<< HEAD
-  
-=======
->>>>>>> 88bafbb4d5cf2753ad642c8e0a35ff816368adcd
-
+ 
+ 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
