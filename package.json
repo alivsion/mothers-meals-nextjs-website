@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next build",
-"deploy": "node -e \"const { execSync } = require('child_process'); process.env.GITHUB_ACTIONS='true'; const url = execSync('git config --get remote.origin.url').toString().trim(); console.log('Deploying to', url); execSync('next build', { stdio: 'inherit' }); execSync('git config user.name \\'github-actions[bot]\\'' ); execSync('git config user.email \\'github-actions[bot]@users.noreply.github.com\\'' ); execSync('git add docs'); execSync('touch docs/.nojekyll'); try { execSync('git commit -m \\'Update docs folder [skip ci]\\''); } catch (e) { console.log('No changes to commit'); }\""
+"deploy": "node -e \"const { execSync } = require('child_process'); process.env.GITHUB_ACTIONS='true'; const url = execSync('git config --get remote.origin.url').toString().trim(); console.log('Deploying to', url); execSync('next build', { stdio: 'inherit' }); execSync('git config user.name \\'github-actions[bot]\\'' ); execSync('git config user.email \\'github-actions[bot]@users.noreply.github.com\\'' ); execSync('echo > docs/.nojekyll'); execSync('git add docs/.nojekyll docs'); try { execSync('git commit -m \\'Update docs folder [skip ci]\\''); } catch (e) { console.log('No changes to commit'); }\""
     } ,
     
     "homepage": "https://alivsion.github.io/mothers-meals-nextjs-website",
