@@ -55,8 +55,8 @@ const CookingProcess = () => {
 
               {/* Step text linked directly under circle */}
               <div>
-                <h1 className={`text-xl font-bold uppercase ${item.color }`}>{item.Step}</h1>
-                <h2 className={`text-sm sm:text-xl   text-gray-600 mb-1 ${item.color }`}>{item.title}</h2>
+                <h1 className="text-xl font-bold uppercase">{item.Step}</h1>
+                <h2 className="text-sm sm:text-xl   text-gray-600 mb-1">{item.title}</h2>
                 {/* <p className="text-gray-600 text-sm sm:text-base">{item.desc}</p> */}
               </div>
             </div>

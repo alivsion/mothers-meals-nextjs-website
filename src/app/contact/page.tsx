@@ -4,14 +4,14 @@ import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Head from "next/head";
 
 export default function Contact() {
-  const hcaptchaRef = useRef(null);
-  const [token, setToken] = useState(null);
-  const [result, setResult] = useState("");
+  const hcaptchaRef = useRef<HCaptcha>(null);
+  const [token, setToken] = useState<string | null>(null);
+  const [result, setResult] = useState<string>("");
 
-  const onSubmit = async (event) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.currentTarget);
     formData.append("access_key", "a4eebf4f-3a8e-49a5-a951-f19d88dfdf6f");
     setResult("Sending...");
 
@@ -25,8 +25,8 @@ export default function Contact() {
 
       if (data.success) {
         setResult("✅ Form Submitted Successfully");
-        event.target.reset();
-        hcaptchaRef.current.resetCaptcha();
+        event.currentTarget.reset();
+        hcaptchaRef.current?.resetCaptcha();
         setToken(null);
       } else {
         setResult(`❌ ${data.message}`);
@@ -72,7 +72,7 @@ export default function Contact() {
             📩 Contact Us
           </h2>
           <p className="text-[#E7154F] text-center mb-6 sm:mb-8 text-sm sm:text-base">
-            💬 Have a question or feedback? Fill out the form below and we’ll get back to you.
+            💬 Have a question or feedback? Fill out the form below and we'll get back to you.
           </p>
 
           {/* Form */}
@@ -118,7 +118,7 @@ export default function Contact() {
               <label className="block text-[#95063C] font-medium mb-1">📝 Message</label>
               <textarea
                 name="message"
-                rows="4"
+                rows={4}
                 placeholder="Write your message..."
                 required
                 className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-[#D2B161] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E7154F] transition"
@@ -131,7 +131,7 @@ export default function Contact() {
                 sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
                 reCaptchaCompat={false}
                 ref={hcaptchaRef}
-                onVerify={(token) => setToken(token)}
+                onVerify={(token: string) => setToken(token)}
               />
             </div>
 

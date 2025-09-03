@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ClickSpark from "./Animated/ClickSpark";
+import { Metadata } from "next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,16 +15,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Mother Meals - Fresh Homemade Food Delivery",
   description:
     "Order fresh, homemade meals delivered to your doorstep in Hyderabad.",
   keywords:
     "homemade food, food delivery, Hyderabad, fresh meals, Mother Meals",
-  author: "Mother Meals",
+  authors: [{ name: "Mother Meals" }],
 };
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <head>
@@ -32,21 +37,20 @@ export default function RootLayout({ children }) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords} />
-        <meta name="author" content={metadata.author} />
+        <meta name="description" content={metadata.description || ""} />
+        <meta name="keywords" content={typeof metadata.keywords === 'string' ? metadata.keywords : ""} />
 
         {/* Open Graph Meta Tags */}
-        <meta property="og:title" content={metadata.title} />
-        <meta property="og:description" content={metadata.description} />
+        <meta property="og:title" content={String(metadata.title || "")} />
+        <meta property="og:description" content={metadata.description || ""} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.mothermeals.in" />
         <meta property="og:image" content="/Logo.png" />
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metadata.title} />
-        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:title" content={String(metadata.title || "")} />
+        <meta name="twitter:description" content={metadata.description || ""} />
         <meta name="twitter:image" content="/Logo.png" />
         <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon" />
         {/* Structured Data */}
