@@ -1,5 +1,6 @@
 
 // import CookingProcess from "./components/CookingProcess"
+import FoodItems from "./components/FoodItems"
 import HeroSec from "./components/HeroSec"
 import Reviews from "./components/Reviews"
 import SafetySec from "./components/SafetySec"
@@ -21,6 +22,7 @@ const Home = () => {
 <SectionTwo/>
 <SafetySec/>
 {/* <CookingProcess/> */}
+<FoodItems/>
 <Reviews/>
 
     

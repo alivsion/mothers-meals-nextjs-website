@@ -48,7 +48,7 @@ const Navbar = () => {
       <nav aria-label="breadcrumb" className="nav sticky top-0 bg-white/30 backdrop-blur-sm w-full flex items-center justify-between p-5  shadow-md z-50">
         {/* Logo */}
         <div className="logo ">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 " >
             <Image width={118} height={110} src="/Logo.png" alt="Logo" />
           </Link>
         </div>
@@ -226,12 +226,7 @@ const Navbar = () => {
     />
   </div>
 </div>
-              {/* <Link
-                href=""
-                className="bg-green-600 px-3 py-3 rounded-lg text-white font-bold text-xl hover:bg-[#f48465ed] transition-colors mt-auto text-center"
-              >
-                🚀 Grab Your Offer
-              </Link> */}
+          
             </motion.div>
           </motion.div>
         )}
