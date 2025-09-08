@@ -1,7 +1,6 @@
 import Image from 'next/image';
  
-
-const SectionTwo = () => {
+const SectionTwo: React.FC = () => {
 return (
     <>
         <section className="sectionTwo   flex flex-col md:flex-row items-center justify-evenly p-10  ">

@@ -3,29 +3,35 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import FoodCard from "./FoodCard";
 
-const initialDishes = [
+interface Dish {
+  id: number;
+  name: string;
+  img: string;
+}
+
+const initialDishes: Dish[] = [
   { id: 1, name: "Hyderabadi Biryani", img: "https://www.licious.in/blog/wp-content/uploads/2022/06/mutton-hyderabadi-biryani-01.jpg" },
   { id: 2, name: "Paneer Tikka", img: "https://www.cookingcarnival.com/wp-content/uploads/2021/07/Hariyali-Paneer-Tikka-4.jpg" },
   { id: 3, name: "Masala Dosa", img: "https://apollosugar.com/wp-content/uploads/2018/12/Masala-Dosa-1024x683.jpg" },
   { id: 4, name: "Samosa", img: "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/12/samosa-recipe.jpg" },
   { id: 5, name: "Chole Bhature", img: "https://static.vecteezy.com/system/resources/previews/015/933/726/large_2x/chole-bhature-is-a-north-indian-food-dish-a-combination-of-chana-masala-and-bhatura-or-puri-free-photo.jpg" },
   { id: 6, name: "idli", img: "https://www.foodie-trail.com/wp-content/uploads/2020/06/251fdbc0-57f6-41c3-a976-5192391cf040.jpg" },
- ];
+];
 
-const FoodItems = () => {
-  const carouselRef = useRef(null);
+const FoodItems: React.FC = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
-  const [dishes, setDishes] = useState(initialDishes);
-  const [cardWidth, setCardWidth] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  const [dragLimit, setDragLimit] = useState(0);
-  const debounceTimerRef = useRef(null);
+  const [dishes, setDishes] = useState<Dish[]>(initialDishes);
+  const [cardWidth, setCardWidth] = useState<number>(0);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [dragLimit, setDragLimit] = useState<number>(0);
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (carouselRef.current) {
       const container = carouselRef.current;
-      const firstCard = container.querySelector("div");
+      const firstCard = container.querySelector("div") as HTMLElement;
       const gap = 24; // gap-6 in Tailwind = 24px
 
       if (firstCard) {
@@ -82,7 +88,9 @@ const FoodItems = () => {
       setDishes(prevDishes => {
         const newDishes = [...prevDishes];
         const firstCard = newDishes.shift(); // Remove first card
-        newDishes.push(firstCard); // Add it to the end
+        if (firstCard) {
+          newDishes.push(firstCard); // Add it to the end
+        }
         return newDishes;
       });
 
@@ -130,6 +138,7 @@ const FoodItems = () => {
               name={dish.name}
               description={`Delicious ${dish.name} to satisfy your cravings!`}
               price="199"
+              rating="4.5"
             />
           ))}
         </motion.div>

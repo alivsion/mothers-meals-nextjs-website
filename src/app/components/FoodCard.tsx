@@ -1,4 +1,12 @@
-const FoodCard = ({ image, name, description, price, rating }) => {
+interface FoodCardProps {
+  image: string;
+  name: string;
+  description: string;
+  price: number | string;
+  rating: number | string;
+}
+
+const FoodCard: React.FC<FoodCardProps> = ({ image, name, description, price, rating }) => {
   return (
     <div className="card item w-[19rem] p-5 rounded-lg shadow shadow-black flex-shrink-0 border border-[#D2B161] hover:shadow-lg transition-shadow duration-300">
       {/* Card Header */}

@@ -1,6 +1,13 @@
 import React from 'react'
 
-const ReviewCard = ({name , Date , review , img}) => {
+interface ReviewCardProps {
+  name: string;
+  Date: string;
+  review: string;
+  img: string;
+}
+
+const ReviewCard: React.FC<ReviewCardProps> = ({name , Date , review , img}) => {
   return (
   <>
    <div className="card item  mt-6 w-[25rem] p-5 rounded-lg shadow shadow-black flex-shrink-0">

@@ -6,27 +6,15 @@ import Reviews from "./components/Reviews"
 import SafetySec from "./components/SafetySec"
 import SectionTwo from "./components/SectionTwo"
 
- 
-
-const Home = () => {
-
-
-
+const Home: React.FC = () => {
   return (
-    
     <>
-   
-
-
-<HeroSec/>
-<SectionTwo/>
-<SafetySec/>
-{/* <CookingProcess/> */}
-<FoodItems/>
-<Reviews/>
-
-    
- 
+      <HeroSec/>
+      <SectionTwo/>
+      <SafetySec/>
+      {/* <CookingProcess/> */}
+      <FoodItems/>
+      <Reviews/>
     </>
   )
 }

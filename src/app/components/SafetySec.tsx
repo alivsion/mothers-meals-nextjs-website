@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Guideline from "./Guideline";
 
-const SafetySec = () => {
+const SafetySec: React.FC = () => {
   const RidersGuidelinesData = [
     {
       heading: "Sanitization Standards",

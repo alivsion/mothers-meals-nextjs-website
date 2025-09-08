@@ -1,29 +1,35 @@
-import { Geist, Geist_Mono } from "next/font/google";
+// Note: Google Fonts commented out due to network restrictions in build environment
+// import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ClickSpark from "./Animated/ClickSpark";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Mother Meals - Fresh Homemade Food Delivery",
   description:
     "Order fresh, homemade meals delivered to your doorstep in Hyderabad.",
   keywords:
     "homemade food, food delivery, Hyderabad, fresh meals, Mother Meals",
-  author: "Mother Meals",
+  authors: [{ name: "Mother Meals" }],
 };
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <head>
@@ -32,21 +38,21 @@ export default function RootLayout({ children }) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords} />
-        <meta name="author" content={metadata.author} />
+        <meta name="description" content={metadata.description || ""} />
+        <meta name="keywords" content={typeof metadata.keywords === 'string' ? metadata.keywords : metadata.keywords?.toString() || ""} />
+        <meta name="author" content="Mother Meals" />
 
         {/* Open Graph Meta Tags */}
-        <meta property="og:title" content={metadata.title} />
-        <meta property="og:description" content={metadata.description} />
+        <meta property="og:title" content={metadata.title?.toString() || ""} />
+        <meta property="og:description" content={metadata.description || ""} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.mothermeals.in" />
         <meta property="og:image" content="/Logo.png" />
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metadata.title} />
-        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:title" content={metadata.title?.toString() || ""} />
+        <meta name="twitter:description" content={metadata.description || ""} />
         <meta name="twitter:image" content="/Logo.png" />
         <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon" />
         {/* Structured Data */}
@@ -92,7 +98,7 @@ export default function RootLayout({ children }) {
         duration={400}
       >
         <body
-          className={`bg-[#F4F7FF] overflow-x-hidden ${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`bg-[#F4F7FF] overflow-x-hidden antialiased`}
         >
           <Navbar />
           <main className="max-w-6xl mx-auto px-4">{children}</main>

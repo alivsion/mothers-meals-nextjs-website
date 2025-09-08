@@ -4,16 +4,25 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import pinCodesData from './hyderabad-pincodes.json'; // Adjust the path as needed
 
-const DeliveryAreas = () => {
-    const [searchTerm, setSearchTerm] = useState('');
+interface Area {
+  name: string;
+  pinCode: string;
+}
+
+interface PinCodesData {
+  [pinCode: string]: string[];
+}
+
+const DeliveryAreas: React.FC = () => {
+    const [searchTerm, setSearchTerm] = useState<string>('');
 
     // Convert JSON data into an array of objects for easier rendering
     const areas = React.useMemo(
-        () =>
-            Object.entries(pinCodesData).flatMap(([pinCode, areaList]) =>
+        (): Area[] =>
+            Object.entries(pinCodesData as PinCodesData).flatMap(([pinCode, areaList]) =>
                 areaList.map((area) => ({ name: area, pinCode }))
             ),
-        [pinCodesData]
+        []
     );
 
     // Filter areas based on the search term

@@ -10,11 +10,12 @@ import { IoMenu } from "react-icons/io5";
 import { usePathname } from 'next/navigation'; // Import usePathname
 import { BsDownload } from "react-icons/bs";
 import ScrollProgressBar from './ScrollProgressBar';
-const Navbar = () => {
-  const [isCardVisible, setIsCardVisible] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentPath, setCurrentPath] = useState(""); // State to store the current path
-  const [isHidden, setIsHidden] = useState(true);
+
+const Navbar: React.FC = () => {
+  const [isCardVisible, setIsCardVisible] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [currentPath, setCurrentPath] = useState<string>(""); // State to store the current path
+  const [isHidden, setIsHidden] = useState<boolean>(true);
   const pathname = usePathname(); // Get the current route
 
   useEffect(() => {
@@ -23,8 +24,8 @@ const Navbar = () => {
 
   const handleMenuToggle = () => setIsMenuOpen((prev) => !prev);
 
-  const navItems = ["Home", "Contact", "Who Are We", "Delivery Areas"];
-  const navLinks = ["/", "/contact", "/who-are-we", "/delivery-areas"];
+  const navItems: string[] = ["Home", "Contact", "Who Are We", "Delivery Areas"];
+  const navLinks: string[] = ["/", "/contact", "/who-are-we", "/delivery-areas"];
 
   const handlemenuanimation = {
     initial: { opacity: 0, y: 100, transition: { duration: 0.3 } },
