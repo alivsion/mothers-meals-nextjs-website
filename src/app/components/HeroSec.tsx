@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const HeroSec = () => {
+const HeroSec: React.FC = () => {
   return (
     <>
       <div className="flex justify-center mt-8">

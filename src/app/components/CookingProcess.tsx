@@ -1,22 +1,28 @@
- 
 import React from 'react'
 
-const CookingProcess = () => {
-  const processData = [
+interface ProcessItem {
+  video: string;
+  title: string;
+  desc: string;
+  Step: string;
+  color: string;
+}
+
+const CookingProcess: React.FC = () => {
+  const processData: ProcessItem[] = [
     {
       video: "/Cooking/woman-looks-at-organic-food-animation-gif-download-12133634.mp4",
       title: "Fresh Ingredients Sourced Daily",
       desc: "Only the best and freshest ingredients go into your meals.",
       Step: "🥬 Step 1 – Pick & Prep",
-       
-      
+      color: "text-green-600"
     },
     {
       video: "/Cooking/cooking-animated-icon-gif-download-7463986.mp4",
       title: "Cooked with Hygiene & Care",
       desc: "Expert home chefs prepare food with top hygiene standards.",
       Step: "🍳 Step 2 – Cook & Care",
-       
+      color: "text-red-600"
 
     },
     {
@@ -24,7 +30,7 @@ const CookingProcess = () => {
       title: "Hot & Safe Delivery to Your Doorstep",
       desc: "Your meal reaches you fresh, hot, and safely packed.",
       Step: "📦 Step 3 – Hot & Handed",
-       
+      color: "text-blue-600"
     }
   ]
 

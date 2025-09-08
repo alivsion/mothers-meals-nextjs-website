@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import ReviewCard from './ReviewCard'
 import { motion } from "framer-motion"
 
-const Reviews = () => {
+const Reviews: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false); // State to control animation pause
 
   const CardData =[

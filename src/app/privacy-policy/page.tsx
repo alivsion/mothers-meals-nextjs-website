@@ -3,8 +3,13 @@
 import React from 'react';
 import Head from 'next/head';
 
-const PrivacyPolicy = () => {
-  const policySections = [
+interface PolicySection {
+  title: string;
+  content: string;
+}
+
+const PrivacyPolicy: React.FC = () => {
+  const policySections: PolicySection[] = [
     {
       title: 'Privacy Policy',
       content: 'Last updated: June 29, 2025\n\nMothers Meal Catering Services (“we”, “our”, or “us”) respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our mobile app, place orders, or interact with our services in any way.\n\nPlease read this Privacy Policy carefully. By using our services, you agree to the collection and use of information in accordance with this policy.',

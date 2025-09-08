@@ -1,8 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
 
-const TermsOfService = () => {
-  const termsSections = [
+interface TermsSection {
+  title: string;
+  content: string;
+}
+
+const TermsOfService: React.FC = () => {
+  const termsSections: TermsSection[] = [
     {
       title: 'Terms of Service',
       content: 'Last updated: June 29, 2025\n\nWelcome to Mothers Meal Catering Services. These Terms of Service (“Terms”) govern your access to and use of our website, mobile application, and any related services (collectively, the “Service”).\n\nBy accessing or using our Service, you agree to be bound by these Terms. If you do not agree with any part of these Terms, please do not use our Service.',

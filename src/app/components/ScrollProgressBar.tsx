@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-const ScrollProgressBar = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
+const ScrollProgressBar: React.FC = () => {
+  const [scrollProgress, setScrollProgress] = useState<number>(0);
 
   useEffect(() => {
     const updateScrollProgress = () => {

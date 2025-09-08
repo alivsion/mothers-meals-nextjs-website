@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const WhoAreWe = () => {
+const WhoAreWe: React.FC = () => {
   return (
     <div className="whoAreWePage">
       {/* Hero Section */}
