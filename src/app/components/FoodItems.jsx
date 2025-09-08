@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import FoodCard from "./FoodCard";
 
-const dishes = [
+const initialDishes = [
   { id: 1, name: "Hyderabadi Biryani", img: "https://www.licious.in/blog/wp-content/uploads/2022/06/mutton-hyderabadi-biryani-01.jpg" },
   { id: 2, name: "Paneer Tikka", img: "https://www.cookingcarnival.com/wp-content/uploads/2021/07/Hariyali-Paneer-Tikka-4.jpg" },
   { id: 3, name: "Masala Dosa", img: "https://apollosugar.com/wp-content/uploads/2018/12/Masala-Dosa-1024x683.jpg" },
@@ -15,10 +15,12 @@ const dishes = [
 const FoodItems = () => {
   const carouselRef = useRef(null);
   const controls = useAnimation();
-  const [dragLimit, setDragLimit] = useState(0);
+  const [dishes, setDishes] = useState(initialDishes);
   const [cardWidth, setCardWidth] = useState(0);
-  const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [dragLimit, setDragLimit] = useState(0);
+  const debounceTimerRef = useRef(null);
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -30,41 +32,72 @@ const FoodItems = () => {
         setCardWidth(firstCard.offsetWidth + gap);
       }
 
+      // Calculate drag limits for manual dragging
       const totalScroll = container.scrollWidth - container.offsetWidth - gap;
       setDragLimit(totalScroll > 0 ? totalScroll : 0);
     }
+  }, [dishes]);
+
+  // Function to handle user interaction (pause animation)
+  const handleUserInteraction = () => {
+    setIsPaused(true);
+    
+    // Clear existing debounce timer
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+    
+    // Set new debounce timer
+    debounceTimerRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, 1500);
+  };
+
+  // Cleanup debounce timer on unmount
+  useEffect(() => {
+    return () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+    };
   }, []);
 
-  // Step-by-step autoplay
+  // Continuous leftward movement
   useEffect(() => {
-    if (cardWidth === 0) return;
+    if (cardWidth === 0 || isPaused) return;
+
+    const moveCards = async () => {
+      if (isAnimating || isPaused) return;
+      
+      setIsAnimating(true);
+
+      // Step 1: Move all cards to the left by one card width (200ms)
+      await controls.start({
+        x: -cardWidth,
+        transition: { duration: 0.2, ease: "easeInOut" },
+      });
+
+      // Step 2: Immediately after animation, rearrange the array
+      // Move the first card to the end and reset position
+      setDishes(prevDishes => {
+        const newDishes = [...prevDishes];
+        const firstCard = newDishes.shift(); // Remove first card
+        newDishes.push(firstCard); // Add it to the end
+        return newDishes;
+      });
+
+      // Step 3: Reset position instantly (no animation)
+      controls.set({ x: 0 });
+
+      setIsAnimating(false);
+    };
 
     const interval = setInterval(() => {
-      setIndex((prev) => {
-        let next = prev + direction;
-
-        // If reached last card → reverse
-        if (next * cardWidth >= dragLimit) {
-          setDirection(-1);
-          next = prev - 1;
-        }
-        // If reached first card → forward
-        else if (next < 0) {
-          setDirection(1);
-          next = 1;
-        }
-
-        controls.start({
-          x: -next * cardWidth,
-          transition: { duration: 0.6, ease: "easeInOut" },
-        });
-
-        return next;
-      });
-    }, 2000); // every 2s
+      moveCards();
+    }, 1000); // 200ms animation + 800ms pause = 1000ms total
 
     return () => clearInterval(interval);
-  }, [cardWidth, dragLimit, controls, direction]);
+  }, [cardWidth, controls, isAnimating, isPaused]);
 
   return (
     <>
@@ -81,13 +114,18 @@ const FoodItems = () => {
           ref={carouselRef}
           className="flex flex-nowrap gap-6 cursor-grab"
           animate={controls}
+          initial={{ x: 0 }}
           drag="x"
           dragConstraints={{ left: -dragLimit, right: 0 }}
+          dragElastic={0.1}
+          onDragStart={handleUserInteraction}
+          onTap={handleUserInteraction}
           whileTap={{ cursor: "grabbing" }}
+          whileDrag={{ cursor: "grabbing" }}
         >
-          {dishes.map((dish) => (
+          {dishes.map((dish, index) => (
             <FoodCard
-              key={dish.id}
+              key={`${dish.id}-${index}`} // Use combination of id and index for unique keys
               image={dish.img}
               name={dish.name}
               description={`Delicious ${dish.name} to satisfy your cravings!`}

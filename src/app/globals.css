@@ -5,6 +5,9 @@
   background-position: center;
   background-repeat: no-repeat;
  }
+ *{
+  user-select: none;
+ }
  
  @keyframes gradient-border {
   0% {
@@ -47,10 +50,7 @@
 }
 
  
-::selection {
-  background-color: #d2b161;  
-  color: black;  
-}
+ 
  
  
 .MarqueeWrapper{

@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { IoMenu } from "react-icons/io5";
 import { usePathname } from 'next/navigation'; // Import usePathname
 import { BsDownload } from "react-icons/bs";
+import ScrollProgressBar from './ScrollProgressBar';
 const Navbar = () => {
   const [isCardVisible, setIsCardVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,7 +46,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav aria-label="breadcrumb" className="nav sticky top-0 bg-white/30 backdrop-blur-sm w-full flex items-center justify-between p-5  shadow-md z-50">
+      <div className="sticky top-0 w-full z-50">
+        {/* Scroll Progress Bar - Top most element */}
+        <div className="w-full">
+          <ScrollProgressBar />
+        </div>
+        <nav aria-label="breadcrumb" className="nav bg-white/30 backdrop-blur-sm w-full flex items-center justify-between p-5 shadow-md">
         {/* Logo */}
         <div className="logo ">
           <Link href="/" className="flex items-center gap-2 " >
@@ -120,7 +126,8 @@ const Navbar = () => {
         >
           <IoMenu /> MENU
         </span>
-      </nav>
+        </nav>
+      </div>
 
       {/* Mobile Navigation (Animated) */}
       <AnimatePresence>
@@ -209,7 +216,7 @@ const Navbar = () => {
   </div>
 
   {/* App Store and Play Store Buttons */}
-  <div className="app flex justify-center     gap-5 py-3  cursor-pointer">
+  <div className="app flex justify-center gap-5 py-3 cursor-pointer">
     <Image
       width={135}
       height={135}
@@ -226,7 +233,6 @@ const Navbar = () => {
     />
   </div>
 </div>
-          
             </motion.div>
           </motion.div>
         )}
