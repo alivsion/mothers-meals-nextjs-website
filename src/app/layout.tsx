@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   keywords:
     "homemade food, food delivery, Hyderabad, fresh meals, Mother Meals",
   authors: [{ name: "Mother Meals" }],
+    manifest: "/manifest.json",
 };
 
 interface RootLayoutProps {
