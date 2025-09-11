@@ -139,11 +139,11 @@ const Navbar: React.FC = () => {
             animate={{ x: "0%" }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="mobileLink w-[60vw] fixed top-0 right-0 h-full bg-black/60 shadow-lg z-50 backdrop-blur-lg text-white p-15"
+            className="mobileLink w-full fixed top-0 right-0 h-full bg-black/80 shadow-lg z-50 backdrop-blur-lg text-white flex items-center justify-center"
             onClick={handleMenuToggle}
           >
             <motion.div
-              className="navLinksM flex flex-col gap-10 p-5 h-full"
+              className="navLinksM flex flex-col items-center justify-center gap-10 p-8 h-full w-full max-w-lg mx-auto"
               initial="hidden"
               animate="visible"
               exit="hidden"
@@ -178,7 +178,7 @@ const Navbar: React.FC = () => {
                   <Link
                     href={navLinks[index]}
                     className={`navLink font-semibold text-3xl relative group  ${
-                      currentPath === navLinks[index] ? "text-[#95063C]" : "text-white"
+                      currentPath === navLinks[index] ? " text-[#f9e0e9]" : "text-white"
                     }`}
                     onClick={handleMenuToggle}
                   >
@@ -195,45 +195,45 @@ const Navbar: React.FC = () => {
 
               {/* Card */}
               <div
-  className={`card flex flex-col items-center gap-5 w-full max-w-md md:max-w-lg lg:max-w-xl rounded p-6 md:p-10 transition-all duration-500  `}
->
-  <h1 className="flex items-center gap-2 text-2xl md:text-3xl font-bold text-center text-nowrap">
-    <span className="text-2xl font-bold">
-      <BsDownload />
-    </span>
-    Download Our App
-  </h1>
+                className={`card bg-white/95 backdrop-blur-sm shadow-2xl w-full max-w-sm mx-auto flex flex-col items-center gap-5 rounded-xl p-6 transition-all duration-500 border border-gray-200`}
+              >
+                <h1 className="flex items-center gap-2 text-2xl md:text-3xl font-bold text-center text-gray-800">
+                  <span className="text-2xl font-bold text-[#95063C]">
+                    <BsDownload />
+                  </span>
+                  Download Our App
+                </h1>
 
-  {/* Input and Button */}
-  <div className="link flex flex-col sm:flex-row justify-between items-center gap-3 w-screen p-5">
-    <input
-      type="tel"
-      placeholder="Enter your phone number"
-      className="w-full sm:w-auto flex-1 px-4 py-2 sm:py-3 rounded-lg border border-[#D2B161] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E7154F] transition"
-    />
-    <button className="text-md text-nowrap bg-gradient-to-r from-[#95063C] to-[#E7154F] text-white font-semibold px-4 py-2 sm:py-3 rounded-lg shadow-md hover:from-[#E7154F] hover:to-[#95063C] transition-transform duration-300 hover:scale-105">
-      Send Link
-    </button>
-  </div>
+                {/* Input and Button */}
+                <div className="link w-full flex flex-col gap-3 p-2">
+                  <input
+                    type="tel"
+                    placeholder="Enter your phone number"
+                    className="w-full px-4 py-3 rounded-lg border border-[#D2B161] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E7154F] transition text-gray-800"
+                  />
+                  <button className="w-full text-md bg-gradient-to-r from-[#95063C] to-[#E7154F] text-white font-semibold py-3 rounded-lg shadow-md hover:from-[#E7154F] hover:to-[#95063C] transition-transform duration-300 hover:scale-105">
+                    Send Link
+                  </button>
+                </div>
 
-  {/* App Store and Play Store Buttons */}
-  <div className="app flex justify-center gap-5 py-3 cursor-pointer">
-    <Image
-      width={135}
-      height={135}
-      src="/appstore.webp"
-      alt="App Store"
-      className="w-32 sm:w-36"
-    />
-    <Image
-      width={135}
-      height={135}
-      src="/playstore.webp"
-      alt="Play Store"
-      className="w-32 sm:w-36"
-    />
-  </div>
-</div>
+                {/* App Store and Play Store Buttons */}
+                <div className="app flex justify-center gap-4 py-3 cursor-pointer">
+                  <Image
+                    width={135}
+                    height={135}
+                    src="/appstore.webp"
+                    alt="App Store"
+                    className="w-28 h-auto"
+                  />
+                  <Image
+                    width={135}
+                    height={135}
+                    src="/playstore.webp"
+                    alt="Play Store"
+                    className="w-28 h-auto"
+                  />
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         )}
