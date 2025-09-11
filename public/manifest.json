@@ -57,7 +57,9 @@
   "related_applications": [],
   "display_override": [],
   "share_target": null,
-  "launch_handler": null,
+ "launch_handler": {
+  "client_mode": "focus-existing"
+},
   "shortcuts": [],
   "iarc_rating_id": "",
   "background_color": "#ff7373",
