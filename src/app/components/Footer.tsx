@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import packageJson from "../../../package.json";
 
 const Footer: React.FC = () => {
   return (
@@ -45,7 +46,7 @@ const Footer: React.FC = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-300   py-4 text-center text-sm">
-        <p>© 2025 Mother Meals | All rights reserved</p>
+        <p>© 2025 Mother Meals | All rights reserved | v {packageJson.version}</p>
       </div>
     </footer>
   );
