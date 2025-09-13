@@ -31,7 +31,15 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      # Step 5: Deploy the built site to Netlify.
+      # Step 5: Create Netlify config file to prevent Netlify from building.
+      # This file tells Netlify where our pre-built site is and that no build command is needed.
+      - name: Create Netlify Config
+        run: |
+          echo "[build]" > netlify.toml
+          echo "command = \"\"" >> netlify.toml
+          echo "publish = \".next\"" >> netlify.toml
+
+      # Step 6: Deploy the built site to Netlify.
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
         with:
