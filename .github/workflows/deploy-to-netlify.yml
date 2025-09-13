@@ -32,15 +32,13 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      # Step 5: Create Netlify config file to prevent Netlify from building AND running plugins.
-      # This file tells Netlify where our pre-built site is and that no build command or plugins are needed.
+      # Step 5: Create a simplified Netlify config file.
+      # This file tells Netlify only the essentials: do not run a build command and where the publish directory is.
       - name: Create Netlify Config
         run: |
           echo "[build]" > netlify.toml
           echo "command = \"\"" >> netlify.toml
           echo "publish = \"out\"" >> netlify.toml
-          echo "" >> netlify.toml
-          echo "[plugins]" >> netlify.toml
 
       # Step 6: Verify the contents of the build output directory.
       - name: List Output Directory Contents
@@ -55,4 +53,5 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
 
