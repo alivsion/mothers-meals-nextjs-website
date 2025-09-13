@@ -1,115 +1,94 @@
+// components/FoodItems.tsx
 "use client";
-import { useRef, useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, } from "framer-motion";
 import FoodCard from "./FoodCard";
+import { useCarouselAnimation, Dish } from "../hooks/useCarouselAnimation";
 
-interface Dish {
-  id: number;
-  name: string;
-  img: string;
-}
-
-const initialDishes: Dish[] = [
-  { id: 1, name: "Hyderabadi Biryani", img: "https://www.licious.in/blog/wp-content/uploads/2022/06/mutton-hyderabadi-biryani-01.jpg" },
-  { id: 2, name: "Paneer Tikka", img: "https://www.cookingcarnival.com/wp-content/uploads/2021/07/Hariyali-Paneer-Tikka-4.jpg" },
-  { id: 3, name: "Masala Dosa", img: "https://apollosugar.com/wp-content/uploads/2018/12/Masala-Dosa-1024x683.jpg" },
-  { id: 4, name: "Samosa", img: "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/12/samosa-recipe.jpg" },
-  { id: 5, name: "Chole Bhature", img: "https://static.vecteezy.com/system/resources/previews/015/933/726/large_2x/chole-bhature-is-a-north-indian-food-dish-a-combination-of-chana-masala-and-bhatura-or-puri-free-photo.jpg" },
-  { id: 6, name: "idli", img: "https://www.foodie-trail.com/wp-content/uploads/2020/06/251fdbc0-57f6-41c3-a976-5192391cf040.jpg" },
+// Data for the carousels
+const initialVegDishes: Dish[] = [
+    { id: 1, name: "Sabudana Khichdi, Raita", img: "https://www.indianveggiedelight.com/wp-content/uploads/2022/03/sabudana-khichdi-recipe-1.jpg" },
+    { id: 2, name: "Chole With Paratha", img: "https://www.myhealthybreakfast.in/wp-content/uploads/2021/04/chole-paratha.jpg" },
+    { id: 3, name: "Mix Veg Curry With Chapati", img: "https://www.whiskaffair.com/wp-content/uploads/2021/07/Mix-Vegetable-Curry-2-3.jpg" },
+    { id: 4, name: "Alu Gobi With Chapati", img: "https://static.toiimg.com/thumb/61250268.cms?width=1200&height=900" },
+    { id: 5, name: "Kabuli Chana With Butter Naan", img: "https://www.archanaskitchen.com/images/archanaskitchen/1-Author/shaheen_ali/KABULI_CHANA_MASALA_WITH_NAAN.jpg" },
+    { id: 6, name: "Methi Muttor Malai", img: "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/methi-mutter-malai-recipe.jpg" },
+    { id: 7, name: "Soya Chunks With Chapati", img: "https://thefoodxp.com/wp-content/uploads/2021/02/Soya-Chunks-Curry-Recipe-1.jpg" },
+    { id: 8, name: "Gobi Manchurian", img: "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/02/gobi-manchurian-recipe.jpg" },
+    { id: 9, name: "Paneer Paratha", img: "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/12/paneer-paratha-recipe.jpg" },
+    { id: 10, name: "Alu Ka Qurma With Rice", img: "https://i.ytimg.com/vi/O2Z3v54RCkI/maxresdefault.jpg" },
+    { id: 11, name: "Palak Paneer With Jeera Rice", img: "https://myfoodstory.com/wp-content/uploads/2021/11/Palak-Paneer-4.jpg" },
+    { id: 12, name: "Vegetable Tahari With Raita", img: "https://www.vegrecipesofindia.com/wp-content/uploads/2018/10/tahari-recipe-1.jpg" },
 ];
 
-const FoodItems: React.FC = () => {
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const controls = useAnimation();
-  const [dishes, setDishes] = useState<Dish[]>(initialDishes);
-  const [cardWidth, setCardWidth] = useState<number>(0);
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
-  const [isPaused, setIsPaused] = useState<boolean>(false);
-  const [dragLimit, setDragLimit] = useState<number>(0);
-  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+const initialNonVegDishes: Dish[] = [
+    { id: 13, name: "Chicken Kheema With Chapati", img: "https://zpre.s3.ap-south-1.amazonaws.com/s3fs-public/2022-07/shutterstock_1899141019.jpg" },
+    { id: 14, name: "Omlet Khulcha", img: "https://static.toiimg.com/thumb/55324292.cms?width=1200&height=900" },
+    { id: 15, name: "Chicken Shami With Paratha", img: "https://www.masala.tv/wp-content/uploads/2022/05/chicken-shami-kabab.jpg" },
+    { id: 16, name: "Red Chicken With Chapati", img: "https://images.slurrp.com/prod/recipe_images/transcribe/main%20images/Red-Chicken-curry.webp" },
+    { id: 17, name: "Malai Chicken With Chapati", img: "https://myfoodstory.com/wp-content/uploads/2022/05/Murgh-Malai-Tikka-3.jpg" },
+    { id: 18, name: "Chicken Nahari With Chapati", img: "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/11/chicken-nihari-recipe.jpg" },
+    { id: 19, name: "Chicken Majestic", img: "https://www.indianhealthyrecipes.com/wp-content/uploads/2015/12/chicken-majestic-recipe.jpg" },
+    { id: 20, name: "Chicken Do Piyaza", img: "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/09/chicken-do-pyaza.jpg" },
+    { id: 21, name: "Chicken 65 With Rice", img: "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/chicken-65-recipe.jpg" },
+    { id: 22, name: "Dum Chicken Kheema", img: "https://www.awesomecuisine.com/wp-content/uploads/2015/05/kheema-dum.jpg" },
+    { id: 23, name: "Odisa Chicken Curry", img: "https://www.archanaskitchen.com/images/archanaskitchen/1-Author/swathynandini/ODISHA_STYLE_CHICKEN_CURRY.jpg" },
+    { id: 24, name: "Kadai Chicken With Rice", img: "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/08/kadai-chicken-recipe.jpg" },
+];
 
-  useEffect(() => {
-    if (carouselRef.current) {
-      const container = carouselRef.current;
-      const firstCard = container.querySelector("div") as HTMLElement;
-      const gap = 24; // gap-6 in Tailwind = 24px
-
-      if (firstCard) {
-        setCardWidth(firstCard.offsetWidth + gap);
-      }
-
-      // Calculate drag limits for manual dragging
-      const totalScroll = container.scrollWidth - container.offsetWidth - gap;
-      setDragLimit(totalScroll > 0 ? totalScroll : 0);
-    }
-  }, [dishes]);
-
-  // Function to handle user interaction (pause animation)
-  const handleUserInteraction = () => {
-    setIsPaused(true);
-    
-    // Clear existing debounce timer
-    if (debounceTimerRef.current) {
-      clearTimeout(debounceTimerRef.current);
-    }
-    
-    // Set new debounce timer
-    debounceTimerRef.current = setTimeout(() => {
-      setIsPaused(false);
-    }, 1500);
-  };
-
-  // Cleanup debounce timer on unmount
-  useEffect(() => {
-    return () => {
-      if (debounceTimerRef.current) {
-        clearTimeout(debounceTimerRef.current);
-      }
-    };
-  }, []);
-
-  // Continuous leftward movement
-  useEffect(() => {
-    if (cardWidth === 0 || isPaused) return;
-
-    const moveCards = async () => {
-      if (isAnimating || isPaused) return;
-      
-      setIsAnimating(true);
-
-      // Step 1: Move all cards to the left by one card width (200ms)
-      await controls.start({
-        x: -cardWidth,
-        transition: { duration: 0.2, ease: "easeInOut" },
-      });
-
-      // Step 2: Immediately after animation, rearrange the array
-      // Move the first card to the end and reset position
-      setDishes(prevDishes => {
-        const newDishes = [...prevDishes];
-        const firstCard = newDishes.shift(); // Remove first card
-        if (firstCard) {
-          newDishes.push(firstCard); // Add it to the end
+// Helper function to render a carousel
+const Carousel = ({
+  carousel,
+  direction,
+  title,
+}: {
+  carousel: ReturnType<typeof useCarouselAnimation>;
+  direction: 'left' | 'right';
+  title: string;
+}) => (
+  <div className="mb-16">
+    <h3 className="text-3xl sm:text-4xl mb-5 text-center font-bold tracking-wide text-gray-800">
+      {title}
+    </h3>
+    <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] p-1 overflow-hidden">
+      <motion.div
+        ref={carousel.carouselRef}
+        className="flex flex-nowrap gap-6 cursor-grab"
+        animate={carousel.controls}
+        initial={{ x: 0 }}
+        drag="x"
+        dragConstraints={
+          direction === 'left'
+            ? { left: -carousel.dragLimit, right: 0 }
+            : { left: 0, right: carousel.dragLimit }
         }
-        return newDishes;
-      });
+        dragElastic={0.1}
+        onDragStart={carousel.handleUserInteraction}
+        onTap={carousel.handleUserInteraction}
+        whileTap={{ cursor: "grabbing" }}
+        whileDrag={{ cursor: "grabbing" }}
+      >
+        {carousel.dishes.map((dish, index) => (
+          <FoodCard
+            key={`${dish.id}-${index}`}
+            image={dish.img}
+            name={dish.name}
+            description={`Delicious ${dish.name} to satisfy your cravings!`}
+            price="199"
+            rating="4.5"
+          />
+        ))}
+      </motion.div>
+    </div>
+  </div>
+);
 
-      // Step 3: Reset position instantly (no animation)
-      controls.set({ x: 0 });
-
-      setIsAnimating(false);
-    };
-
-    const interval = setInterval(() => {
-      moveCards();
-    }, 1000); // 200ms animation + 800ms pause = 1000ms total
-
-    return () => clearInterval(interval);
-  }, [cardWidth, controls, isAnimating, isPaused]);
+const FoodItems: React.FC = () => {
+  const vegCarousel = useCarouselAnimation(initialVegDishes, 'right');
+  const nonVegCarousel = useCarouselAnimation(initialNonVegDishes, 'left');
 
   return (
     <>
-      <h2 className="text-4xl sm:text-5xl text-center mb-10">
+      <h2 className="text-4xl sm:text-5xl text-center my-10">
         🍲
         <span className="font-extrabold uppercase bg-gradient-to-r from-[#95063C] to-[#E7154F] bg-clip-text text-transparent tracking-wide">
           Our Items
@@ -117,32 +96,8 @@ const FoodItems: React.FC = () => {
         🥗
       </h2>
 
-      <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] p-6 overflow-hidden">
-        <motion.div
-          ref={carouselRef}
-          className="flex flex-nowrap gap-6 cursor-grab"
-          animate={controls}
-          initial={{ x: 0 }}
-          drag="x"
-          dragConstraints={{ left: -dragLimit, right: 0 }}
-          dragElastic={0.1}
-          onDragStart={handleUserInteraction}
-          onTap={handleUserInteraction}
-          whileTap={{ cursor: "grabbing" }}
-          whileDrag={{ cursor: "grabbing" }}
-        >
-          {dishes.map((dish, index) => (
-            <FoodCard
-              key={`${dish.id}-${index}`} // Use combination of id and index for unique keys
-              image={dish.img}
-              name={dish.name}
-              description={`Delicious ${dish.name} to satisfy your cravings!`}
-              price="199"
-              rating="4.5"
-            />
-          ))}
-        </motion.div>
-      </div>
+      <Carousel carousel={vegCarousel} direction="left" title="🥗 Veg Delights 🥦" />
+      <Carousel carousel={nonVegCarousel} direction="left" title="🍗 Non-Veg Feasts 🍖" />
 
       <div className="flex items-center justify-center mb-8">
         <button className="w-fit cursor-pointer mt-4 py-2 px-4 rounded-lg bg-gradient-to-r from-[#95063C] to-[#E7154F] text-white font-semibold hover:from-[#E7154F] hover:to-[#95063C] transition-transform duration-300 hover:scale-105">
