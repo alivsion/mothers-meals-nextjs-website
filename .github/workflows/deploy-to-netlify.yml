@@ -13,31 +13,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out your repository's code so the workflow can access it.
+      # Step 1: Check out your repository's code.
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Step 2: Set up the specific version of Node.js you need.
-      # Change '20' to your project's required Node.js version if different.
+      # Step 2: Set up Node.js.
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # Step 3: Install your project's dependencies.
-      # Using 'npm ci' is recommended for CI environments as it's faster
-      # and safer than 'npm install'. It uses the package-lock.json file.
+      # Step 3: Install dependencies.
       - name: Install Dependencies
         run: npm ci
-        # If your private repo needs to install private npm packages from GitHub,
-        # you will need a Personal Access Token (PAT) with 'read:packages' scope.
-        # Uncomment the 'env' block below and add the secret to your repo.
-        # env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       # Step 4: Run the build command for your project.
-      # This command should generate a static site in a build directory.
-      # The most common command is 'npm run build'.
       - name: Build Project
         run: npm run build
 
@@ -45,15 +35,9 @@ jobs:
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
         with:
-          # This command deploys the specified directory to production.
-          # Change 'build' to your project's actual build output directory
-          # (e.g., 'dist', 'out', 'public').
-          args: deploy --prod --dir=build
+          # This command deploys the '.next' directory to production.
+          args: deploy --prod --dir=.next
         env:
-          # These secrets are required for the Netlify CLI to authenticate.
-          # You will need to add these to your GitHub repository's secrets.
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
-
 
