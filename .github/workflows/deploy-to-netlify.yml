@@ -42,7 +42,11 @@ jobs:
           echo "" >> netlify.toml
           echo "[plugins]" >> netlify.toml
 
-      # Step 6: Deploy the built site to Netlify.
+      # Step 6: Verify the contents of the build output directory.
+      - name: List Output Directory Contents
+        run: ls -R out
+
+      # Step 7: Deploy the built site to Netlify.
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
         with:
