@@ -32,13 +32,15 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      # Step 5: Create Netlify config file to prevent Netlify from building.
-      # This file tells Netlify where our pre-built site is.
+      # Step 5: Create Netlify config file to prevent Netlify from building AND running plugins.
+      # This file tells Netlify where our pre-built site is and that no build command or plugins are needed.
       - name: Create Netlify Config
         run: |
           echo "[build]" > netlify.toml
           echo "command = \"\"" >> netlify.toml
           echo "publish = \"out\"" >> netlify.toml
+          echo "" >> netlify.toml
+          echo "[plugins]" >> netlify.toml
 
       # Step 6: Deploy the built site to Netlify.
       - name: Deploy to Netlify
