@@ -1,4 +1,4 @@
-# Name of your GitHub Actions workflow.
+# Name of your GitHub Actions Workflow.
 name: Deploy to Netlify
 
 # This workflow runs on pushes to the 'main' branch.
